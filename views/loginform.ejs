@@ -1,0 +1,21 @@
+<% layout("/layouts/biolerplate") %>
+<body style="background-color: rgb(172, 36, 221);">
+
+    <div class="login-container">
+        <h3 style="margin-left:30%; color:white">Login Here</h3>
+        <form action="/homepage/login" method="post" novalidate class="needs-validation">
+            
+            <div>
+                <input type="text" name="login[username]" class="form-control mb-0" placeholder="Enter Username" required>
+                <div class="invalid-feedback">Please Enter Username</div>
+            </div>
+            <div>
+                <input type="text" name="login[password]" class="form-control password mb-0" placeholder="Password" required>
+                <div class="invalid-feedback">Enter password</div>
+            </div>
+            
+            <button class="btn btn-success submit-btn mt-4">Submit</button>
+        </form>
+    </div>
+    
+</body>

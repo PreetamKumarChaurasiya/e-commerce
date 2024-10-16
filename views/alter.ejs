@@ -1,0 +1,33 @@
+<% layout("/layouts/biolerplate") %>
+<body>
+   
+        <a href="/homepage" class="btn btn-success dashboard-btn mt-3  offset-6  ">Logout Admin</a>
+       
+    <h2 style="margin-left:2rem;">All Items</h2>
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+           <% for(item of allItem){%>
+         
+          <div class="card">
+                <a href=""><img src="<%=item.image%>" class="card-img-top" alt="..." style="height:15rem;"></a>
+                <div class="card-body">
+                  <h5 class="card-title"><%=item.title%></h5>
+                  <h6 class="cad-title">&#8377;<%=item.price.toLocaleString("en-IN")%></h6>
+                  <div class="flex-div" style="justify-content: space-between;">
+
+                  <form action="/admin/<%=item._id%>/edit" method="get">
+                    <button class="btn btn-primary">Edit</button>
+                 </form>
+
+                  <form action="/admin/<%=item._id%>/delete?_method=DELETE" method="post" >
+                    <button  class="btn btn-danger">Delete</button>
+                  </form>
+
+                </div>
+                </div>
+          </div>
+          <%}%>
+        </div>
+        <form action="/admin/new" method="get">
+            <button class="btn btn-success mb-3 col-6 offset-3">Add new Item</button>
+        </form>
+</body>

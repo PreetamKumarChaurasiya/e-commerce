@@ -1,0 +1,34 @@
+<% layout("/layouts/biolerplate") %>
+<div class="row mt-3">
+  <div class="col col-8 offset-2">
+  <h2>Edit Details</h2>
+ <form action="/admin/<%=item._id%>?_method=PUT" method="post" novalidate class="needs-validation">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label><br>
+        <input id="title" type="text" name="item[title]" value="<%=item.title%>" class="form-control" required>
+        <div class="invalid-feedback">Please Enter title</div>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label><br>
+        <textarea  id="description" name="item[description]" row="10" col="20" class="form-control" required><%=item.description%></textarea>
+        <div class="invalid-feedback">Please type description</div>
+    </div>
+    <div class="mb-3">
+        <label for="specification" class="form-label">Specification</label><br>
+        <textarea  id="specification" name="item[specification]" row="10" col="20" class="form-control" required><%=item.specification%></textarea>
+        <div class="invalid-feedback">Please type specification</div>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image/URL/Links</label><br>
+        <input id="image" type="text" name="item[image]" value="<%=item.image%>" class="form-control" required>
+        <div class="invalid-feedback">Please give image URL</div>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label><br>
+        <input id="price" type="text" name="item[price]" value="<%=item.price%>" class="form-control" required>
+        <div class="invalid-feedback">Please Enter price</div>
+    </div>
+    <button class="btn btn-success col-12">Edit</button>
+</form>
+ </div>
+</div>

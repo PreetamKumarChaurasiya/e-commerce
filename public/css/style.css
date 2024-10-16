@@ -1,0 +1,446 @@
+/* general styling */
+body 
+{
+    padding: 0;
+    margin: 0;
+    /* background-color:pink; */
+}
+.flex-div
+{
+    display:flex;
+}
+
+/* Homepage/Navbar */
+.nav-container
+{
+    width:100%;
+    height:auto;
+    background-color: rgb(172, 36, 221);
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px;
+    color:white;
+}
+.left-side-div
+{
+    width:30px;
+}
+.middle-side-div
+{
+    margin-right:20rem;
+}
+.nav-container div input 
+{
+    width:300px;
+    position:relative;
+    margin-right:0.1rem;
+}
+.second-div
+{
+    margin-right:25rem;
+}
+.login-btn
+{
+    margin-left:-5rem;
+}
+.signUp-btn 
+{
+    margin-left:-1rem;
+    margin-right:3rem;
+}
+.cart 
+{
+    font-size:30px;
+}
+
+/* login */
+.login-container 
+{
+   width:300px;
+   background-color: rgb(128, 128, 128);
+   padding:1rem;
+   position:absolute;
+   left:calc(50% - 150px);
+   top:calc(50% - 175px);
+   border-radius:10px;
+   margin-bottom:2rem;
+}
+.login-container input 
+{
+    margin:2rem 0;
+}
+.login-container .submit-btn 
+{
+    width:100%;
+}
+/* Cards */
+.card
+{
+    margin-bottom:0.3rem;
+}
+.card-img-top
+{
+   border-radius:1rem;  
+    width:100% !important;
+   object-fit: contain;
+
+}
+.row 
+{
+    margin:10px 25px;
+}
+/* footer */
+.footer-info
+{
+    background-color: #ebebeb;
+    width:100%;
+    display:flex;
+    padding:2rem;
+    align-items:center;
+    justify-content: center;
+     
+}
+.fa-brands
+{
+    margin-right:1rem;
+}
+p 
+{
+    line-height: 2rem;
+    margin-right:3rem;
+}
+/* show details */
+.show-img
+{
+  height:50vh;
+  object-fit:contain;
+}
+/* cart button */
+.cart-btn
+{
+    background-color:transparent ;
+    border:none;
+}
+.show-cart-num
+{
+    width:25px;
+    height: 25px;
+    position:absolute;
+    top:5px;
+    right:15px;
+    background-color: red;
+    color:white;
+    border-radius:50%;
+    text-align: center;
+    
+}
+/* admin */
+.admin-dashboard button
+{
+    padding:1rem 4rem;
+    border:none;
+    border-radius:10px;
+    color:white;
+    font-size:40px;
+}
+/* slider */
+.slide-container
+{
+    width:100%;
+    height: 500px;
+    /* border:3px solid black; */
+    position: relative;
+    margin:auto;
+    margin-top:1%;
+    overflow: hidden;
+    display: flex;
+}
+.slide
+{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   flex:0 0 100%;
+   transition: 1s;
+}
+/* styling next/prev icons */
+.next
+{
+    position:absolute;
+    top:50%;
+    left:98.3%;
+    color:white;
+    margin-right:20px;
+}
+.prev
+{
+    position:absolute;
+    top:50%;
+    left:0;
+    color:white;
+}
+.prev:hover 
+{
+    cursor:pointer;
+}
+.next:hover 
+{
+    cursor: pointer;
+}
+
+/* initially dropdown is hidden mode */
+.dropdown-homepage
+{
+    display: none;
+}
+.dropdown-loginHomepage
+{
+    display: none;
+}
+.success-order-card{
+    padding:2rem;
+}
+.admin-icon 
+{
+    background-color: transparent;
+    border:none;
+}
+/* hover effect */
+.admin-icon:hover 
+{
+    color:blue;
+}
+.signUp:hover 
+{
+    color:blue;
+}
+.login:hover 
+{
+    color:blue;
+}
+.log-out:hover{
+    color:blue;
+}
+.orders:hover 
+{
+    color:blue;
+}
+.carts:hover {
+    color:blue;
+}
+
+/*  responsiveness (slider) */
+@media (max-width:1120px){
+    .next 
+    {
+        left:97%;
+    }
+}
+@media (max-width:720px){
+    .next
+    {
+        left:96%;
+    }
+}
+
+/* responsive loginHomepage(navbar) */
+@media (max-width:1205px){
+      .left-side-div 
+      {
+        display: none;
+      }
+      .middle-side-div
+      {
+        margin-left:0%;
+      }
+}
+@media (max-width:1080px){
+    .middle-side-div
+    {
+        margin-right:10%;
+    }
+}
+@media (max-width:900px){
+    .middle-side-div
+    {
+        margin:0;
+    }
+}
+@media (max-width:710px){
+     .right-side-div 
+     {
+        display:none;
+
+     }
+     .dropdown-loginHomepage{
+        display:inline;
+     }
+     .dropdown-loginHomepage ul li form button 
+     {
+         border:none;
+         background-color:transparent;
+     }
+}
+/* responsive homepage(navbar) */
+@media (max-width:1000px){
+    .first-div 
+    {
+        display: none;
+
+    }
+    .second-div 
+    {
+        width:200px;
+    }
+}
+@media (max-width:700px){
+    .second-div
+    {
+        width:100px;
+    }
+}
+@media (max-width:600px){
+    .second-div
+    {
+        width:50px;
+    }
+}
+@media (max-width:770px){
+    .third-div
+    {
+        display:none;
+    }
+    .dropdown-homepage
+    {
+        display:inline;
+        margin-left:-10rem;
+    }
+    .dropdown-homepage ul li form button 
+    {
+        border:none;
+        background-color:transparent;
+    }
+}
+/* all orders */
+@media (max-width:550px) {
+        .order-col
+        {
+            width:100%;
+            margin-left:0;
+        }
+}
+/* cart */
+@media (max-width:1600px){
+    .buyNow-btn
+    {
+        margin-right:35rem;
+    }
+}
+@media (max-width:1280px){
+    .buyNow-btn
+    {
+        margin-right:30rem;
+    }
+}
+@media (max-width:1180px){
+    .buyNow-btn
+    {
+        margin-right:25rem;
+    }
+}
+@media (max-width:1000px){
+    .buyNow-btn
+    {
+        margin-right:20rem;
+    }
+}
+@media (max-width:800px){
+    .buyNow-btn
+    {
+        margin-right:10rem;
+    }
+}
+@media (max-width:673px){
+    .buyNow-btn
+    {
+        margin-right:5rem;
+    }
+}
+@media (max-width:520px){
+    .buyNow-btn
+    {
+        margin-right:2rem;
+    }
+}
+@media (max-width:440px){
+    .buyNow-btn{
+        margin-right:1rem;  
+    }
+}
+@media (max-width:410px){
+    .cartDiv{
+        display: block;
+    }
+}
+/* cancel order page */
+@media (max-width:870px){
+    .cancel-order-div
+    {
+        display:block;
+        margin-left:3rem;
+    }
+   
+}
+@media (max-width:550px){
+    .cancel-order-div
+    {
+        
+        margin-left:0;
+    }
+   
+}
+/* success order page */
+@media (max-width:870px){
+    .success-order-div
+    {
+        display:block;
+        margin-left:3rem;
+    }
+   
+}
+@media (max-width:550px){
+    .success-order-div
+    {
+        margin-left:0;
+    }
+   
+}
+@media (max-width:500px){
+    .success-order-card
+    {
+        padding:0;
+    }
+}
+/* admin (dashboard) */
+@media (max-width:600px){
+    .admin-dashboard{
+        margin-left:6rem;
+       
+    }
+    
+}
+@media (max-width:430px){
+    .admin-dashboard{
+        display: none;
+       
+    }
+    
+}
+
+
+
+
+
+

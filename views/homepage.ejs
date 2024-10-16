@@ -1,0 +1,104 @@
+<% layout("/layouts/biolerplate") %>
+<body>
+    
+        <!-- navbar -->
+        <div class="nav-container sticky-top">
+          <div class="flex-div first-div">
+            <span class="material-symbols-outlined" style="">shopping_bag</span>
+          </div>
+
+         <div class=" flex-div second-div">
+          
+              <form action="/homepage/searchResult" method="post">
+                 <div class="flex-div">
+                 <input type="text" class="form-control" name="searchType" placeholder="Seach products" style="display: inline;">
+                 <button class="btn btn-danger search-btn">Search</button>
+                </div>
+              </form>
+        </div>
+          
+          <div class="flex-div third-div">
+                <form action="/homepage/login">
+                     <button class="btn btn-success login-btn">login</button>
+                </form>
+                <form action="/homepage/signup">
+                    <button class="btn btn-dark signUp-btn">SignUp</button>
+                </form>
+                <form action="/admin">
+                    <button class="admin-icon"><span class="material-symbols-outlined " style="color:white; font-size:30px;margin-top:5px;">account_circle</span></button>
+                </form>
+          </div>
+
+          <div class="dropdown dropdown-homepage" style="padding:0">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+            <ul class="dropdown-menu">
+              <li class="">
+                <form action="/homepage/login">
+                  <button class="login" style="width:100%;">login</button>
+                </form>
+              </li>
+              <li>
+                <form action="/homepage/signup">
+                    <button class="signUp" style="width:100%;">SignUp</button>
+                </form>
+              </li>
+
+              <form action="/admin">
+                <button class="admin-icon" style="width:100%;">Admin</button>
+            </form>
+             
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- slider -->
+        <div class="slide-container" >
+          <img src="https://plus.unsplash.com/premium_photo-1680985551009-05107cd2752c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="slide" >
+          <img src="https://media.istockphoto.com/id/141944385/photo/laptops.jpg?s=612x612&w=0&k=20&c=qqWhcSA5ZJofpOvyLuyMcZTQU5Ew9Ebadk3u8iPVQVU=" alt="" class="slide">
+          <img src="https://helpdeskgeek.com/wp-content/pictures/2021/10/multi-monitor.jpeg" alt="" class="slide">
+          <img src="https://www.pcworld.com/wp-content/uploads/2023/10/cpu-hub-100758206-orig.jpg?quality=50&strip=all" alt="" class="slide">
+          <img src="https://i.pcmag.com/imagery/reviews/07lrPVKK2Bexf9Xi0sKRlSa-1..v1678155979.jpg" alt="" class="slide">
+          <img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2018/08/best-mouse-keyboard-combos.jpg" alt="" class="slide">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/best-over-ear-headphones-1527009080.jpg" alt="" class="slide">
+    
+          <span class="material-symbols-outlined prev">arrow_back_ios</span>
+          <span class="material-symbols-outlined next">arrow_forward_ios</span>
+      </div>
+
+        <!-- all products -->
+        <h2 style="margin-left:2rem;">All Items</h2>
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+           <% for(item of allItem){%>
+         
+          <div class="card mb-3">
+                <a href="/homepage/<%=item.id%>/showInfo"><img src="<%=item.image%>" class="card-img-top" alt="..." style="height:15rem;"></a>
+                <div class="card-body">
+                  <h5 class="card-title"><%=item.title%></h5>
+                  <h6 class="cad-title">&#8377;<%=item.price.toLocaleString("en-IN")%></h6>
+                  <a href="/homepage/signup" class="btn " style="background-color: rgb(172, 36, 221);color:white;">Add to Cart</a>
+                </div>
+          </div>
+        
+        <%}%>
+      </div>
+
+      <!-- footer -->
+      <footer>
+        <div class="footer-info">
+            <div class="personal-detail">
+              <div class="icons" style="margin-left:3.5rem;">
+               <i class="fa-brands fa-square-facebook"></i>
+               <i class="fa-brands fa-instagram"></i>
+               <i class="fa-brands fa-linkedin"></i>
+            </div>
+               <p class="info">
+                Deleveloper Name: Suresh Singh<br>
+                Email: kumarsuresh8403@gmail.com<br>
+              </p>
+               
+          </div>
+        </div>
+    </footer>
+      
+</body>

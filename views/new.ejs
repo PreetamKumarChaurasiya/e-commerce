@@ -1,0 +1,37 @@
+<% layout("/layouts/biolerplate") %>
+<div class="row mt-3">
+    <div class="col col-8 offset-2">
+    <h2>Add Details</h2>
+   <form action="/admin/new" method="post" novalidate class="needs-validation">
+      <div class="mb-3">
+         <label for="type" class="form-label">Type</label><br>
+         <input id="type" type="text" name="item[type]" placeholder="Enter type of item like mobiles,laptops,cables" class="form-control" required >
+         <div class="invalid-feedback">Please Enter type of item</div>
+      </div>
+      <div class="mb-3">
+          <label for="title" class="form-label">Title</label><br>
+          <input id="title" type="text" name="item[title]" placeholder="Enter title" class="form-control" required>
+          <div class="invalid-feedback">Please Enter title</div>
+      </div>
+      <div class="mb-3">
+          <label for="description" class="form-label">Description</label><br>
+          <textarea  id="description" name="item[description]" row="10" col="20"  placeholder="Enter description" class="form-control" required></textarea>
+          <div class="valid-feedback">Good</div>
+        </div>
+      <div class="mb-3">
+          <label for="specification" class="form-label">Specification</label><br>
+          <textarea  id="specification" name="item[specification]" row="10" col="20" placeholder="Enter specification" class="form-control" required></textarea>
+          <div class="invalid-feedback">Please Enter specification</div>
+        </div>
+      <div class="mb-3">
+          <label for="image" class="form-label">Image/URL/Links</label><br>
+          <input id="image" type="text" name="item[image]" placeholder="Enter Image/URL/Link" class="form-control" required>
+          <div class="invalid-feedback">Please give image URL</div>
+      </div>
+      <div class="mb-3">
+          <label for="price" class="form-label">Price</label><br>
+          <input id="price" type="text" name="item[price]" placeholder="Enter Price" class="form-control" required>
+          <div class="invalid-feedback">Please Enter price</div>
+      </div>
+      <button class="btn btn-success col-12">Add</button>
+    </form>

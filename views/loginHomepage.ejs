@@ -1,0 +1,112 @@
+<% layout("/layouts/biolerplate") %>
+<body>
+    
+        <!-- navbar -->
+        <div class="nav-container sticky-top">
+          <div class="flex-div left-side-div">
+            <!-- <span class="material-symbols-outlined" style="">shopping_bag</span> -->
+         </div>
+
+         <div class="flex-div middle-side-div">
+              
+              <form action="/homepage/signUp/searchResult" method="post">
+                <div class="flex-div">
+                   <input type="text" class="form-control" name="searchType" placeholder="Seach products">
+                   <button class="btn btn-danger search-btn">Search</button>
+                </div>
+              </form>
+          </div>
+          
+          <div class="flex-div right-side-div">
+                <form action="/homepage">
+                     <button class="btn btn-success login-btn">Logout</button>
+                </form>
+                <form action="/homepage/signUp/orders">
+                      <button class="btn btn-success your-orders-btn">Your Orders<span class="material-symbols-outlined orders-icon" style="margin-top:-1rem;position:relative;top:6px;left:3px;">orders</span></button>
+                </form>
+                <form action="/homepage/signUp/cart" method="get" >
+                    <button class="cart-btn" style="margin-right:1rem;"><span class="material-symbols-outlined cart" style="margin-left:0rem; color:white;">shopping_cart</span></button>
+                    <% if(cart){%>
+                      <div class="show-cart-num"><%=cart%></div>
+                    <%}%>
+                  </form>
+          </div>
+
+          <!-- for small size screen -->
+          <div class="dropdown dropdown-loginHomepage" >
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+            <ul class="dropdown-menu">
+              <li>
+                <form action="/homepage">
+                  <button class="log-out">Logout</button>
+               </form>
+              </li>
+              <li>
+                <form action="/homepage/signUp/orders">
+                  <button class="orders">Your Orders</button>
+               </form>
+              </li>
+              <li>
+                <form action="/homepage/signUp/cart" method="get" >
+                    <button class="carts" style="margin-right:1rem;">Cart</button>
+                 
+                </form> 
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+          <!-- slider -->
+          <div class="slide-container">
+            <img src="https://plus.unsplash.com/premium_photo-1680985551009-05107cd2752c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="slide" >
+            <img src="https://gizmore.in/cdn/shop/products/SMWGHPWYHCZWASZW_0.jpg?v=1671441749&width=1080"  style="object-fit:contain" alt="" class="slide">
+            <img src="https://m.media-amazon.com/images/I/714mr6GxecL.jpg" style="object-fit:contain" alt="" class="slide">
+            <img src="https://www.pcworld.com/wp-content/uploads/2023/10/cpu-hub-100758206-orig.jpg?quality=50&strip=all" alt="" class="slide">
+            <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/19957602/2022/12/23/5cdba1af-3409-488b-98ae-0bbb0d8594fc1671768370314-OnePlus-Unisex-Headphones-991671768370140-3.jpg" style="object-fit:contain" alt="" class="slide">
+            <img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2018/08/best-mouse-keyboard-combos.jpg" alt="" class="slide">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/best-over-ear-headphones-1527009080.jpg" alt="" class="slide">
+      
+            <span class="material-symbols-outlined prev">arrow_back_ios</span>
+            <span class="material-symbols-outlined next">arrow_forward_ios</span>
+        </div>
+
+        <!-- all products -->
+        <h2 style="margin-left:2rem;">All Items</h2>
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+           <% for(item of allItem){%>
+         
+          <div class="card mb-3">
+                <a href="/homepage/<%=item.id%>/loginShowInfo"><img src="<%=item.image%>" class="card-img-top" alt="..." style="height:15rem;"></a>
+                <div class="card-body">
+                  <h5 class="card-title"><%=item.title%></h5>
+                  <h6 class="cad-title">&#8377;<%=item.price.toLocaleString("en-IN")%></h6>
+                  <form action="/homepage/signUp/<%=item._id%>/cart" method="post">
+                    <button class="btn  add-cart-btn" style="background-color: rgb(172, 36, 221); color:white;">Add to Cart</button>
+                    
+                 </form>
+                </div>
+          </div>
+        
+        <%}%>
+      </div>
+
+      <!-- footer -->
+      <footer>
+        <div class="footer-info">
+            <div class="personal-detail">
+              <div class="icons" style="margin-left:3.5rem;">
+               <i class="fa-brands fa-square-facebook"></i>
+               <i class="fa-brands fa-instagram"></i>
+               <i class="fa-brands fa-linkedin"></i>
+            </div>
+               <p class="info">
+                Deleveloper Name: Suresh Singh<br>
+                Email: kumarsuresh8403@gmail.com<br>
+              </p>
+               
+          </div>
+        </div>
+    </footer>
+      
+</body>

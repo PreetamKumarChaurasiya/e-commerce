@@ -1,0 +1,21 @@
+<% layout("/layouts/biolerplate") %>
+<body style="background-color: rgb(172, 36, 221);">
+    <div class="login-container">
+        <h3 style="margin-left:20%; color:red;">Admin Login</h3>
+        <form action="/admin/homepage" method="post" novalidate class="needs-validation">
+            <div>
+                <select name="username" id="" class="form-control" >
+                    <option value="">----Select----</option>
+                    <option value="Admin">Admin</option>
+                    <option value="DemoCheck">Democheck</option>
+                </select>
+            </div>
+            
+             <div class="col">
+               <input type="password" name="password" class="form-control password mb-0" placeholder="Password" required>
+               <div class="invalid-feedback mt-0">Please enter password</div>
+            </div>
+            <button class="btn btn-success submit-btn mt-4">Submit</button>
+        </form>
+    </div>
+</body>

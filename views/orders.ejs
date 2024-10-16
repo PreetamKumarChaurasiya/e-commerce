@@ -1,0 +1,29 @@
+<% layout("/layouts/biolerplate") %>
+<body>
+   <div class="row">
+        
+       <div class="col col-8 offset-3 order-col">
+        <h2>All orders...</h2>
+            <%for(order of Orders.orders){%>
+            <div class="card " style="padding:1rem;">
+                <button class="btn btn-primary col-8 offset-2 mb-3">OrderID: <%=order._id%></button>
+                <img src="<%=order.orderImage%>" alt="image not loaded"  class="card-img-top" style="height:15rem;">
+               
+                <ul>
+                    <li><b><%=order.orderName%></b></li>
+                    <li><b>&#8377;<%=order.orderPrice.toLocaleString("en-IN") %> </b></li>
+                    <li><i><span class="material-symbols-outlined" style="position:relative; top:8px;">local_shipping</span> <b><%=order.orderStatus%></b></i></li>
+                    <li><b>Username: <%=order.customerName%></b></li>
+                    <li><b>Address: <%=order.orderAddress%></b></li>
+                    <li><b><i>MobNo: <%=order.mobNo%></i></b></li>
+                    <li><b><i>Order Status: <span style="color:green"><%=order.status%></span> </i></b></li>
+                    <li><b><i>Payment mathod: <span style="color:green">Cash on Delivery</span> </i></b></li>
+                </ul>
+                <a href="/homepage/signUp/<%=Orders._id%>/cancelOrder/<%=order._id%>" class="btn btn-danger">Cancel Order</a>
+            </div>
+            
+            <%}%>
+       </div>
+       <a href="/loginHomepage" class="btn btn-success col-8 offset-3">Continue Shop</a>
+   </div>
+</body>

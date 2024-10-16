@@ -1,0 +1,24 @@
+<% layout("/layouts/biolerplate") %>
+<body>
+
+    <div class="row">
+        <div class="col col-6 offset-3">
+        <div class="card success-order-card">
+        <h2 style="color:green;">Your Order are confirmed !! </h2>
+        <img src="<%=item.image%>" alt="" class="card-img-top" style="height:15rem;">
+        <ul>
+            <li><b><%=item.title%></b></li>
+            <li><b>&#8377;<%=item.price%></b></li>
+        </ul>
+        <div class="flex-div success-order-div" style="justify-content: space-between;" >
+            <form action="/loginHomepage">
+                <button class="btn btn-primary mt-3" >Continue Shopping</button>
+            </form>
+            <form action="/homepage/signUp/orders">
+                <button class="btn btn-primary mt-3">Go to Your Orders</button>
+            </form>
+        </div>
+         </div>
+       </div>
+    </div>
+</body>

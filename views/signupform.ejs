@@ -1,0 +1,36 @@
+<% layout("/layouts/biolerplate") %>
+<body style="background-color: rgb(172, 36, 221);">
+
+    <div class="login-container">
+        <h3 style="margin-left:30%; color:rgb(172, 36, 221);">SignUp Here</h3>
+        <form action="/homepage/signUp" method="post" novalidate class="needs-validation">
+
+            <div>
+               <input type="text"  name="username" class="form-control username mb-0" placeholder="Username" required>
+               <div class="invalid-feedback">Please Enter username</div>
+            </div>
+            <div>
+                <input type="text" name="email" class="form-control email mb-0" placeholder="Email" required >
+                <div class="invalid-feedback">Please Enter email</div>
+            </div>
+           
+            <div>
+               <input type="password" name="password" class="form-control password mb-0" placeholder="Password" required>
+               <div class="invalid-feedback">Please Enter password</div>
+            </div>
+
+            <div class="mb-4">
+                <input type="text" name="mobNo" class="form-control mobNo mb-0" placeholder="Mob No." required>
+                <div class="invalid-feedback">Please Enter Mob</div>
+            </div>
+            
+            <div>
+                <textarea name="address" id="" placeholder="Delivery Address" rows="2" cols="33" class="form-control mb-0" required></textarea>
+                <div class="invalid-feedback">Please enter Delivery Address</div>
+            </div>   
+
+            <button class="btn btn-success submit-btn mt-4">Submit</button>
+        </form>
+    </div>
+    
+</body>
